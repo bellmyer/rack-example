@@ -1,9 +1,6 @@
 #!/usr/bin/env ruby
 
 require 'rack'
+require './lib/endpoints'
 
-app = lambda do |env|
-  [200, {'Content-Type' => 'text/html'}, ['<p>Hello, World!</p>']]
-end
-
-Rack::Handler::WEBrick.run app
+Rack::Handler::WEBrick.run Endpoints.new
