@@ -28,7 +28,7 @@ class Endpoints
   
   def method_missing method_name, *args, &block
     puts "METHOD: #{method_name}"
-    [404, {'Content-Type' => 'text/plain'}, ['']]
+    [404, {'Content-Type' => 'text/plain'}, [env.inspect]]
   end
   
   def html content
